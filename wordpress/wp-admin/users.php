@@ -13,7 +13,7 @@ require_once( dirname( __FILE__ ) . '/admin.php' );
 if ( ! current_user_can( 'list_users' ) ) {
 	wp_die(
 		'<h1>' . __( 'You need a higher level of permission.' ) . '</h1>' .
-		'<p>' . __( 'Sorry, you are not allowed to list users.' ) . '</p>',
+		'<p>' . __( 'Sorry, you are not owed to list users.' ) . '</p>',
 		403
 	);
 }
@@ -551,10 +551,14 @@ switch ( $wp_list_table->current_action() ) {
 		<?php
 		if ( current_user_can( 'create_users' ) ) {
 			?>
-	<a href="<?php echo admin_url( 'user-new.php' ); ?>" class="page-title-action"><?php echo esc_html_x( 'Add New', 'user' ); ?></a>
+	<a href="<?php echo admin_url( 'user-new.php' ); ?>" class="page-title-action"><?php echo esc_html_x( 'Add User', 'user' ); ?></a>
+        <a href="<?php echo admin_url( 'user-new.php' ); ?>" class="page-title-action"><?php echo esc_html_x( 'Add FB', 'user' ); ?></a>
 <?php } elseif ( is_multisite() && current_user_can( 'promote_users' ) ) { ?>
+       
+ 
 	<a href="<?php echo admin_url( 'user-new.php' ); ?>" class="page-title-action"><?php echo esc_html_x( 'Add Existing', 'user' ); ?></a>
 			<?php
+       
 }
 
 if ( strlen( $usersearch ) ) {

@@ -13,7 +13,8 @@
  * @subpackage Twenty_Nineteen
  * @since 1.0.0
  */
-
+?>
+<?php
 get_header();
 ?>
 
@@ -45,3 +46,4 @@ get_header();
 
 <?php
 get_footer();
+?>
